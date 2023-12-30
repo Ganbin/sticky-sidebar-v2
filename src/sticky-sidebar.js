@@ -225,12 +225,12 @@ const StickySidebar = (() => {
 
         // Container of sticky sidebar dimensions.
         dims.containerTop    = StickySidebar.offsetRelative(this.container).top;
-        dims.containerHeight = this.container.clientHeight;
+        dims.containerHeight = this.container.getBoundingClientRect().height;
         dims.containerBottom = dims.containerTop + dims.containerHeight;
 
         // Sidebar dimensions.
-        dims.sidebarHeight = this.sidebarInner.offsetHeight;
-        dims.sidebarWidth  = this.sidebarInner.offsetWidth;
+        dims.sidebarHeight = this.sidebarInner.getBoundingClientRect().height;
+        dims.sidebarWidth = this.sidebarInner.getBoundingClientRect().width;
 
         // Screen viewport dimensions.
         dims.viewportHeight = window.innerHeight;
